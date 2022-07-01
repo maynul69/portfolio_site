@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-// import Logo from '../Images/logo.png';
+import Logo from '../Images/logo.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Home_1 from '../Images/home/img-1.jpg';
 // import Home_2 from '../Images/home/img-2.jpg';
@@ -18,23 +18,39 @@ class Header extends Component {
     
     render() {
 
-        return(
-            <header id="header" className="site-header header-style-1">
-                <nav className="navigation navbar navbar-default">
-                    <div className="container-fluid">
-                        <div className="navbar-header">
-                            <button type="button" className="open-btn" onClick={() => this.setState({isOpen: true})}>
-                                <span className="sr-only">Toggle navigation</span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                                <span className="icon-bar"></span>
-                            </button>
-                            <a className="navbar-brand" href="index.html">
-                                {/* <img src={Logo} alt="" /> */}
-                                <h1 style={{color:'white',textAlign:'center'}}>MH</h1>
-                            </a>
-                        </div>
-                        <div id="navbar" className={ this.state.isOpen ? "navbar-collapse navigation-holder active" : "navbar-collapse navigation-holder"}>
+        return (
+          <header id="header" className="site-header header-style-1">
+            <nav className="navigation navbar navbar-default">
+              <div className="container-fluid">
+                <div className="navbar-header">
+                  <button
+                    type="button"
+                    className="open-btn"
+                    onClick={() => this.setState({ isOpen: true })}
+                  >
+                    <span className="sr-only">Toggle navigation</span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                    <span className="icon-bar"></span>
+                  </button>
+                  <a className="navbar-brand" href="index.html">
+                    <img
+                      style={{
+                        width: "20%",
+                        Display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        border: "0",
+                        borderRadius: "50px",
+                      }}
+                      src={Logo}
+                      alt=""
+                    />
+                    {/* <h1 style={{color:'white',textAlign:'center'}}>MH</h1> */}
+                  </a>
+                  
+                </div>
+                {/* <div id="navbar" className={ this.state.isOpen ? "navbar-collapse navigation-holder active" : "navbar-collapse navigation-holder"}>
                             <button className="close-navbar" onClick={() => this.setState({isOpen: false})}>
                                 <FontAwesomeIcon icon={faTimes} />    
                             </button>
@@ -44,46 +60,42 @@ class Header extends Component {
                             <ul className="nav navbar-nav">
                                 <li className="home">
                                     <a href="#home">
-                                        {/* <img src={Home_1} alt=""/> */}
+                                        <img src={Home_1} alt=""/>
                                     </a>
                                 </li>
                                 <li className="about">
                                     <a href="#about">
-                                        {/* <img src={Home_2} alt=""/> */}
+                                        <img src={Home_2} alt=""/>
                                     </a>
                                 </li>
                                 <li className="service">
                                     <a href="#service">
-                                        {/* <img src={Home_3} alt=""/> */}
+                                        <img src={Home_3} alt=""/>
                                     </a>
                                 </li>
                                 <li className="protfolio">
                                     <a href="#protfolio">
-                                        {/* <img src={Home_4} alt=""/> */}
+                                        <img src={Home_4} alt=""/>
                                     </a>
                                 </li>
-                                <li className="blog">
-                                    <a href="#blog">
-                                        {/* <img src={Home_5} alt=""/> */}
-                                    </a>
-                                </li>
+                                
                                 <li className="contact">
                                     <a href="#contact">
-                                        {/* <img src={Home_6} alt=""/> */}
+                                        <img src={Home_6} alt=""/>
                                     </a>
                                 </li>
                             </ul>
-                        </div>
-                        <div className="menu-open-btn-holder">
+                        </div> */}
+                {/* <div className="menu-open-btn-holder">
                             <button className="menu-open-btn" onClick={() => this.setState({isOpen: true})}>
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </button>
-                        </div>
-                    </div>
-                </nav>
-            </header>
+                        </div> */}
+              </div>
+            </nav>
+          </header>
         );
     }
 }
