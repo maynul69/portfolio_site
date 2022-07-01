@@ -49,7 +49,7 @@ function App() {
       <Service />
       <Portfolio />
       <Testimonial />
-      <PricingPlan />
+      {/* <PricingPlan /> */}
       <Contact />
       <Footer />
     </div>

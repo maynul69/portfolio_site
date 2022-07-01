@@ -31,14 +31,19 @@ class About extends Component {
                 </p>
 
                 <div className="btns">
-                  <a href="#" className="theme-btn">
+                  <a
+                    href="https://drive.google.com/uc?export=download&id=1X5bVk4KQ7aceLBHae32KWQTovNX59W5i"
+                    className="theme-btn"
+                  >
                     Download CV
                   </a>
                 </div>
               </div>
             </div>
             <div className="col-xl-5 col-lg-5">
-              <div className="hx-about-img"><img src={aboutImg}/></div>
+              <div className="hx-about-img">
+                <img src={aboutImg} />
+              </div>
             </div>
           </div>
         </div>
