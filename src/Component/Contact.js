@@ -32,7 +32,7 @@ class Contact extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-7 col-md-7 col-sm-7">
+                {/* <div className="col-lg-7 col-md-7 col-sm-7">
                   <div className="contact-area contact-area-2 contact-area-3">
                     <h2>Quick Contact Form</h2>
                     <div className="contact-form">
@@ -87,7 +87,7 @@ class Contact extends Component {
                           ></textarea>
                         </div>
                         <div className="submit-btn-wrapper">
-                          <button type="submit" className="theme-btn-s3">
+                          <button type="submit"  className="theme-btn-s3">
                             Submit
                           </button>
                           <div id="loader">
@@ -105,7 +105,7 @@ class Contact extends Component {
                       </form>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
               {/* <div className="row">
                         <div className="col col-xs-12">
