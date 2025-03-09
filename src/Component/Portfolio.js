@@ -6,38 +6,73 @@ import { fab, faFacebook, faFacebookF } from '@fortawesome/free-brands-svg-icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Gallery_1 from '../Images/gym.jpg';
 import Gallery_2 from '../Images/prlx.jpg';
-// import Gallery_3 from '../Images/gallery/img-3.jpg';
-// import Gallery_4 from '../Images/gallery/img-4.jpg';
-// import Gallery_5 from '../Images/gallery/img-5.jpg';
-// import Gallery_6 from '../Images/gallery/img-6.jpg';
+import Taku from '../Images/takuhealt.png';
+import Shot from '../Images/shotcreate.png';
+import CC from '../Images/cchealth.png';
+import EasyCare from '../Images/easycare.png';
+import Quadriga from '../Images/Quadriga.png';
+
 
 
 class Porfolio extends Component {
 
     state = {
-        onWebDesign: false,
-        onPrintDesign: false,
+        onWordpress: false,
+        // onPrintDesign: false,
         onWebApp: false,
-        onPhotography: false,
+        // onPhotography: false,
         isOpen : false,
     }
-
+    constructor(props) {
+      super(props);
+      this.state = {
+        key: 'home',
+      };
+    }
+  
+    handleSelect = (key) => {
+      this.setState({ key });
+    };
+  
     render() {
 
-        const allElement = event => {
-            event.preventDefault();
-            this.setState({
-                onWebApp: true,
-                onPrintDesign: true,
-                onWebDesign: true,
-                onPhotography: true,
-            });
-        }
+        // const allElement = event => {
+        //     event.preventDefault();
+        //     this.setState({
+        //         onWebApp: true,
+        //         onPrintDesign: true,
+        //         onWordpress: true,
+        //         onPhotography: true,
+        //     });
+        // }
+        
 
-        const webDesign = event => {
+        // const printDesign = event => {
+        //     event.preventDefault();
+        //     this.setState({
+        //         onPrintDesign: true,
+        //         onWordpress: false,
+        //         onWebApp: false,
+        //         onPhotography: false,
+        //         isOpen: true,
+        //     });
+        // }
+
+      //   const Photography = event => {
+      //     event.preventDefault();
+      //     this.setState({
+      //         onPhotography: true,
+      //         onWebApp: false,
+      //         onPrintDesign: false,
+      //         onWordpress: false,
+      //         isOpen: true,
+      //     });
+      // }
+
+        const wordpress = event => {
             event.preventDefault();
             this.setState({
-                onWebDesign: true,
+                onWordpress: true,
                 onPrintDesign: false,
                 onWebApp: false,
                 onPhotography: false,
@@ -45,41 +80,23 @@ class Porfolio extends Component {
             });
         }
 
-        const printDesign = event => {
-            event.preventDefault();
-            this.setState({
-                onPrintDesign: true,
-                onWebDesign: false,
-                onWebApp: false,
-                onPhotography: false,
-                isOpen: true,
-            });
-        }
+        
 
         const webApp = event => {
             event.preventDefault();
             this.setState({
                 onWebApp: true,
                 onPrintDesign: false,
-                onWebDesign: false,
+                onWordpress: false,
                 onPhotography: false,
                 isOpen: true,
             });
         }
 
-        const Photography = event => {
-            event.preventDefault();
-            this.setState({
-                onPhotography: true,
-                onWebApp: false,
-                onPrintDesign: false,
-                onWebDesign: false,
-                isOpen: true,
-            });
-        }
+       
 
 
-        console.log(this.state.onWebDesign);
+        console.log(this.state.onWordpress);
 
         return (
           <section id="protfolio" className="gallery-section section-padding">
@@ -91,20 +108,31 @@ class Porfolio extends Component {
                       <span>Portfolio</span>
                       <h2>Work I Have Done</h2>
                     </div>
-                    {/* <ul>
-                                    <li><a data-filter="*" href="#" className="current" onClick={allElement}>All</a></li>
-                                    <li><a data-filter=".Web-Design" href="#" onClick={webDesign}>Web Design</a></li>
-                                    <li><a data-filter=".Print-Design" href="#" onClick={printDesign}>Print Design</a></li>
-                                    <li><a data-filter=".Web-Application" href="#" onClick={webApp}>Web Application</a></li>               
-                                    <li><a data-filter=".Photography" href="#" onClick={Photography}>Photography</a></li> 
-                                </ul> */}
+                    <ul>
+                                    {/* <li><a data-filter="*" href="#" className="current" onClick={allElement}>All</a></li> */}
+                                    <li><a data-filter=".wordpress" href="#" onClick={wordpress}>WordPress</a></li>
+                                    {/* <li><a data-filter=".Print-Design" href="#" onClick={printDesign}>Print Design</a></li> */}
+                                    <li><a data-filter=".Web-Application" href="#" onClick={webApp}>Custom Code</a></li>               
+                                    {/* <li><a data-filter=".Photography" href="#" onClick={Photography}>Photography</a></li>  */}
+                                </ul>
                   </div>
+
+
+
+
+
+
+
+                  
                   <div className="gallery-container gallery-fancybox masonry-gallery tumho-masonary">
+{/* Custom code section */}
+
                     <div
                       className={
-                        this.state.onPrintDesign
-                          ? "grid active"
-                          : "grid" && this.state.onWebApp
+                        // this.state.onPrintDesign
+                        //   ? "grid active"
+                        //   : "grid" &&
+                           this.state.onWebApp
                           ? "grid active"
                           : "grid" && this.state.isOpen
                           ? "grid"
@@ -122,24 +150,23 @@ class Porfolio extends Component {
                           href="https://hercules-fitness.web.app/home"
                           className="view-icon"
                         >
-                          <h3>Funtional Commertial Site</h3>
+                          <h3>Visit Site</h3>
                           {/* <FontAwesomeIcon icon={faPlus} /> */}
                         </a>
                       </div>
                     </div>
+
+
                     <div
                       className={
-                        this.state.onWebDesign
-                          ? "grid active"
-                          : "grid" && this.state.onPrintDesign
-                          ? "grid active"
-                          : "grid" && this.state.onWebApp
-                          ? "grid active"
-                          : "grid" && this.state.onPhotography
-                          ? "grid active"
-                          : "grid" && this.state.isOpen
-                          ? "grid"
-                          : "grid open"
+                        // this.state.onPrintDesign
+                        //   ? "grid active"
+                        //   : "grid" &&
+                        this.state.onWebApp
+                        ? "grid active"
+                        : "grid" && this.state.isOpen
+                        ? "grid"
+                        : "grid open"
                       }
                     >
                       <img
@@ -153,14 +180,183 @@ class Porfolio extends Component {
                           href="https://cool-snickerdoodle-31ff93.netlify.app/"
                           className="view-icon"
                         >
-                          <h3>Paralox Design</h3>
+                          <h3>Visit Site</h3>
                           {/* <FontAwesomeIcon icon={faPlus} /> */}
                         </a>
                       </div>
                     </div>
                     <div
                       className={
-                        this.state.onWebDesign
+                        // this.state.onPrintDesign
+                        //   ? "grid active"
+                        //   : "grid" &&
+                        this.state.onWebApp
+                        ? "grid active"
+                        : "grid" && this.state.isOpen
+                        ? "grid"
+                        : "grid open"
+                      }
+                    >
+                      <img
+                        src={Quadriga}
+                        alt=""
+                        className="img img-responsive"
+                      />
+                      <div className="icon">
+                        <a
+                          target="_blank"
+                          href="https://quadrigaa.netlify.app/"
+                          className="view-icon"
+                        >
+                          <h3>Visit Site</h3>
+                          {/* <FontAwesomeIcon icon={faPlus} /> */}
+                        </a>
+                      </div>
+                    </div>
+
+{/* Wordpress section */}
+
+                    <div
+                      className={
+                        // this.state.onWebApp
+                        //   ? "grid active"
+                        //   : "grid" && this.state.onPrintDesign
+                        //   ? "grid active"
+                        //   : "grid" && 
+                          this.state.onWordpress
+                          ? "grid active"
+                          // : "grid" && this.state.onPhotography
+                          // ? "grid active"
+                          : "grid" && this.state.isOpen
+                          ? "grid"
+                          : "grid open"
+                      }
+                    >
+                      <img
+                        src={Taku}
+                        alt=""
+                        className="img img-responsive"
+                      />
+                      <div className="icon">
+                        <a
+                          target="_blank"
+                          href="https://taku-healthcare.com/"
+                          className="view-icon"
+                        >
+                          <h3>Visit Site</h3>
+                          {/* <FontAwesomeIcon icon={faPlus} /> */}
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className={
+                        // this.state.onWebApp
+                        //   ? "grid active"
+                        //   : "grid" && this.state.onPrintDesign
+                        //   ? "grid active"
+                        //   : "grid" && 
+                          this.state.onWordpress
+                          ? "grid active"
+                          // : "grid" && this.state.onPhotography
+                          // ? "grid active"
+                          : "grid" && this.state.isOpen
+                          ? "grid"
+                          : "grid open"
+                      }
+                    >
+                      <img
+                        src={Shot}
+                        alt=""
+                        className="img img-responsive"
+                      />
+                      <div className="icon">
+                        <a
+                          target="_blank"
+                          href="https://shotcreteaustralia.com.au/"
+                          className="view-icon"
+                        >
+                          <h3>Visit Site</h3>
+                          {/* <FontAwesomeIcon icon={faPlus} /> */}
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className={
+                        // this.state.onWebApp
+                        //   ? "grid active"
+                        //   : "grid" && this.state.onPrintDesign
+                        //   ? "grid active"
+                        //   : "grid" && 
+                          this.state.onWordpress
+                          ? "grid active"
+                          // : "grid" && this.state.onPhotography
+                          // ? "grid active"
+                          : "grid" && this.state.isOpen
+                          ? "grid"
+                          : "grid open"
+                      }
+                    >
+                      <img
+                        src={CC}
+                        alt=""
+                        className="img img-responsive"
+                      />
+                      <div className="icon">
+                        <a
+                          target="_blank"
+                          href="https://cchealth-care.com/"
+                          className="view-icon"
+                        >
+                          <h3>Visit Site</h3>
+                          {/* <FontAwesomeIcon icon={faPlus} /> */}
+                        </a>
+                      </div>
+                    </div>
+                    <div
+                      className={
+                        // this.state.onWebApp
+                        //   ? "grid active"
+                        //   : "grid" && this.state.onPrintDesign
+                        //   ? "grid active"
+                        //   : "grid" && 
+                          this.state.onWordpress
+                          ? "grid active"
+                          // : "grid" && this.state.onPhotography
+                          // ? "grid active"
+                          : "grid" && this.state.isOpen
+                          ? "grid"
+                          : "grid open"
+                      }
+                    >
+                      <img
+                        src={EasyCare}
+                        alt=""
+                        className="img img-responsive"
+                      />
+                      <div className="icon">
+                        <a
+                          target="_blank"
+                          href="https://easycarecontracting.com/"
+                          className="view-icon"
+                        >
+                          <h3>Visit Site</h3>
+                          {/* <FontAwesomeIcon icon={faPlus} /> */}
+                        </a>
+                      </div>
+                    </div>
+
+
+
+
+
+
+{/* others */}
+
+
+
+                    <div
+                      className={
+                        this.state.onWordpress
                           ? "grid active"
                           : "grid" && this.state.onWebApp
                           ? "grid active"

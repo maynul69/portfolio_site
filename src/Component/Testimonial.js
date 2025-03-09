@@ -102,6 +102,10 @@ class Testimonial extends Component {
                             <p>NodeJs</p>
                             <ProgressBar variant="warning" now={65} />
                           </div>
+                          <div>
+                            <p>WordPress</p>
+                            <ProgressBar variant="warning" now={95} />
+                          </div>
                         </Col>
                       </Row>
                     </Container>

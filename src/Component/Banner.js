@@ -19,7 +19,8 @@ import Cover from '../Images/cover.jpg';class Banner extends Component {
                         <h4>I Am Maynul Hossain</h4>
                       </div>
                       <div className="slide-title">
-                        <h2>MERN Stack Developer</h2>
+                        <h2>Full-stack Web Developer</h2>
+                        
                       </div>
                       <div className="btns">
                         <a
